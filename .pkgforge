@@ -1,0 +1,11 @@
+name 'cfssl'
+org 'amylum'
+
+build do
+  run './script/build -os=linux -arch=amd64'
+  run 'false'
+end
+
+test do
+  run 'cfssl version'
+end
