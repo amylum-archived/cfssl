@@ -2,13 +2,13 @@ Prospectus.extra_dep('file', 'pkgforge')
 
 item do
   expected do
-    github_tag
+    github_hash
     repo 'cloudflare/cfssl'
   end
 
   actual do
-    git_tag
-    regex /^(.*)-\d+$/
+    git_hash
+    dir 'upstream'
   end
 
   deps do
