@@ -3,7 +3,9 @@ org 'amylum'
 
 build do
   run './script/build -os=linux -arch=amd64'
-  run 'false'
+  run 'rename "_linux-amd64" "" dist/*'
+  run "mkdir -p #{releasedir}/usr/bin"
+  run "cp dist/* #{releasedir}/usr/bin/"
 end
 
 test do
