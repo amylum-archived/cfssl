@@ -1,7 +1,7 @@
 cfssl
 =========
 
-[![Build Status](https://img.shields.io/circleci/project/amylum/cfssl/master.svg)](https://circleci.com/gh/amylum/cfssl)
+[![Build Status](https://img.shields.io/travis/com/amylum/cfssl.svg)](https://travis-ci.com/amylum/cfssl)
 [![GitHub release](https://img.shields.io/github/release/amylum/cfssl.svg)](https://github.com/amylum/cfssl/releases)
 [![BSD-2 Licensed](https://img.shields.io/badge/license-BSD--2-green.svg)](https://tldrlegal.com/license/bsd-2-clause-license-(freebsd))
 
