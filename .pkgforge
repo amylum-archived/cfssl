@@ -2,10 +2,16 @@ name 'cfssl'
 org 'amylum'
 
 build do
-  run './script/build -os=linux -arch=amd64'
-  run 'rename "_linux-amd64" "" dist/*'
+  gopath = tmpdir(:gopath)
+  srcpath = "#{gopath}/src/github.com/cloudflare/cfssl"
+  run "mkdir -p #{gopath}/src/github.com/cloudflare"
+  run "ln -s #{tmpdir(:build)} #{srcpath}"
+  run "cd #{srcpath} && make", {
+    'GOPATH' => gopath,
+    'CC' => 'musl-gcc'
+  }
   run "mkdir -p #{releasedir}/usr/bin"
-  run "cp dist/* #{releasedir}/usr/bin/"
+  run "cp bin/* #{releasedir}/usr/bin/"
 end
 
 test do
